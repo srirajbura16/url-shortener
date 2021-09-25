@@ -1,5 +1,7 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 URL SHORTENER
+  form(action="" method="post")
+    input(type="text" placeholder="Shorten link")
+    button(type="submit") Shorten
