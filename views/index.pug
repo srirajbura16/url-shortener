@@ -3,5 +3,10 @@ extends layout
 block content
   h1 URL SHORTENER
   form(action="" method="post")
-    input(type="text" placeholder="Shorten link")
+    input(type="text" name="link" placeholder="Shorten link")
     button(type="submit") Shorten
+  
+  if errors 
+    ul
+      each error in errors 
+        li=error.msg
