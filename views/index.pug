@@ -6,6 +6,10 @@ block content
     input(type="text" name="link" placeholder="Shorten link")
     button(type="submit") Shorten
   
+  if url 
+    p=url.short_link 
+    p=url.link
+  
   if errors 
     ul
       each error in errors 

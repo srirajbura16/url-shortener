@@ -8,7 +8,7 @@ exports.get_link_form = (req, res, next) => {
 
 exports.post_link_form = [
   // url_validator,
-  body('url-link').trim().isURL().withMessage('URL invalid'),
+  body('link').trim().isURL().withMessage('URL invalid'),
   (req, res, next) => {
     const errors = validationResult(req);
     console.log(errors);
@@ -16,9 +16,16 @@ exports.post_link_form = [
       res.render('index', { errors: errors.array() });
       return;
     } else {
-      const new_url = new Link({
+      const url = new Link({
         link: req.body.link,
-        short_link,
+        short_link: nanoid(4),
+      });
+      url.save((err) => {
+        if (err) {
+          console.log('error with save');
+          return next(err);
+        }
+        res.render('index', { url: url });
       });
     }
   },
@@ -29,6 +36,3 @@ exports.get_shorten_link = (req, res, next) => {
   //get link by short id link
   //redirect.
 };
-
-//validator
-//valid url
