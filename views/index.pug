@@ -1,16 +1,22 @@
 extends layout
 
 block content
-  h1 URL SHORTENER
-  form(action="" method="post")
-    input(type="text" name="link" placeholder="Shorten link")
-    button(type="submit") Shorten
+  h1.logo URL SHORTENER
+  form(action="" method="post" )
+    div.form-group
+      input(class="form-control " type="text" name="link" placeholder="Shorten link")
+    button(type="submit" class="btn btn-primary") Shorten
   
   if url 
-    p=url.short_link 
-    p=url.link
+    div.url_info
+      div.title Short URL: 
+      a(href=`/${url.short_link}`)
+        span #{getUrl}#{url.short_link}
+      div.title Long URL: 
+      a(href=`${url.link}`) 
+        span=url.link
   
   if errors 
-    ul
+    ul.errors
       each error in errors 
-        li=error.msg
+        li.text-danger=error.msg

@@ -1,8 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap');
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* font-size: 14px; */
+  font-family: 'Gemunu Libre', Helvetica, Arial, sans-serif;
+  background-color: #f4f1de !important;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+
+.block {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: 'Gemunu Libre', sans-serif;
+}
+
+.title {
+  font-family: 'Gemunu Libre', sans-serif;
+  font-size: 2rem;
+}
+
+form {
+  margin: 2rem 0;
+}
+
+.url_info {
+  background-color: #d6ba99 !important;
+  padding: 0.5rem;
+}
+
+.errors {
+  font-size: 1rem;
 }
