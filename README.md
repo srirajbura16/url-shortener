@@ -4,11 +4,11 @@ The name says it all. A URL Shortener with five character route. Why 5 character
 
 [View Live](https://url-shortener.netlify.app)
 
-#### Running Application
+### Running Application
 
 ```bash
-node install
-node run severstart
+npm install
+npm run severstart
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
